@@ -1,17 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<header>
-    <h1>Hi, <br> 
-    I'm Federica,<br>
-    Web Developer</h1>
-    <p>Front End / Designer</p>
-</header>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Federica Ziaco - Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-left-side">
+        <h1>
+          Federica 
+          Ziaco
+        </h1>
+        <h2>- Web Developer</h2>
+        <p>
+            I am a dedicated linguistics and business student with a profound enthusiasm for
+            the realm of Information Technology.<br>
+            Possessing a creative mindset, unwavering motivation, and a strong commitment to
+            continuous learning.<br>
+            I excel in collaborative team environments, and my problem-solving abilities are
+            characterized by creative and targeted solutions.
+        </p>
+        <button id="githubButton">Github</button>
+        <button id="linkedinButton">Linkedin</button> <br />
+        <br />
+
+        <script>
+            // Linkedin link button
+            var linkedinButton = document.getElementById('linkedinButton');
+          
+            
+            linkedinButton.addEventListener('click', function() {
+              window.location.href = 'https://www.linkedin.com/in/federicaziaco/';
+            });
+
+            // Github link button
+            var githubButton = document.getElementById('githubButton');
+
+            githubButton.addEventListener('click', function() {
+            window.location.href = 'https://github.com/feffyx';
+          });
+          </script>
+          
+
+        <button class="btn" id="contactButton">Contact me</button>
+        <p id="emailDisplay"></p>
+
+        <script>
+            // Email display button
+            var contactButton = document.getElementById('contactButton');
+            var emailDisplay = document.getElementById('emailDisplay');
+
+            contactButton.addEventListener('click', function() {
+              
+              var email = 'federicaziaco@icloud.com';
+              
+              emailDisplay.textContent = 'Email: ' + email;
+            });
+          </script>
+
+      </div>
+      </div>
+    </header>
+  </body>
 </html>
