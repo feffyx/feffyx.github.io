@@ -18,7 +18,7 @@ body {
     outline: none; 
 }
 
-html {
+/* html {
     font-size: 80%;
 }
 
@@ -71,4 +71,4 @@ nav a:hover,
 nav a:active {
     color: aqua;
     border-bottom: 3px solid aqua;
-}
+} */
