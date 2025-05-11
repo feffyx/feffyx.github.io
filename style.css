@@ -1,40 +1,257 @@
+/* === Font === */
 @font-face {
-    font-family: 'SF Pro';
-    src: url('fonts/SF-Pro-Display.woff2') format('woff2'),
-         url('fonts/SF-Pro-Display.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'SF Pro';
+  src: url('fonts/SF-Pro-Display.woff2') format('woff2'),
+       url('fonts/SF-Pro-Display.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* === Global Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
 }
 
 body {
-    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #000; /* assuming dark mode */
+  color: #fff;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    border: none;
-    outline: none; 
+/* === Fade-in Animation on Page Load === */
+.fade-in {
+  opacity: 0;
+  animation: fadeInEffect 1.5s ease-in-out forwards;
 }
 
-.project-image-wrapper {
-    position: relative;
-    cursor: pointer;
-  }
-  
-  .project-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    border-radius: 0.375rem; /* match Bootstrap's rounded class */
-  }
-  
-  .project-image-wrapper:hover .project-overlay {
+@keyframes fadeInEffect {
+  to {
     opacity: 1;
   }
+}
+
+/* === Intro Section === */
+.intro {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+}
+
+.profile-img img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* === Social Icons === */
+.social-icons a {
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.1);
+}
+
+/* === Project Grid === */
+.projects {
+  background-color: #111;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* === Project Card === */
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.project-card img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+.project-card .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .overlay {
+  opacity: 1;
+}
+
+/* === Project Image Wrapper Overlay (Old Class — optional) === */
+.project-image-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.project-image-wrapper .project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 0.375rem;
+}
+
+.project-image-wrapper:hover .project-overlay {
+  opacity: 1;
+}
+
+/* === Modal Overlay === */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: white;
+  color: black;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* === Intro: miglior centratura === */
+.intro {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  padding: 5rem 2rem;
+  text-align: left;
+}
+
+.intro-text {
+  max-width: 500px;
+}
+
+/* === Project Card Più Grandi === */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* +larghe */
+  gap: 30px;
+}
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  height: 250px;
+  transition: transform 0.3s ease;
+}
+
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+/* === Overlay testo che copre tutta la card === */
+.project-card .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  text-align: center;
+  padding: 1rem;
+}
+
+.project-card:hover .overlay {
+  opacity: 1;
+}
+
+/* === Modal: supporto media === */
+.modal-content {
+  background: white;
+  color: black;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 700px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.modal-content img,
+.modal-content video {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.timeline-nav {
+  position: sticky;
+  top: 100px;
+}
+
+.timeline-dot {
+  color: #ccc;
+  text-decoration: none;
+  font-weight: bold;
+  border-left: 4px solid #999;
+  padding-left: 1rem;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.timeline-dot:hover {
+  color: #fff;
+  border-color: #fff;
+}

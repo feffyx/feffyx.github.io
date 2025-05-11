@@ -6,72 +6,95 @@
   <title>Home</title>
   <link rel="stylesheet" href="/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
+
 <body class="bg-dark text-white">
+  <div id="main-content" class="fade-in">
 
-  <!-- Navbar -->
-  <header class="text-center py-3">
+    <!-- Navbar -->
     <header class="py-3">
-        <div class="container-fluid d-flex justify-content-between align-items-center">
-         
-          <a href="/home.html" class="h3 text-white text-decoration-none fw-bold ms-3">Federica</a>
-
-          <nav>
-            <div class="d-flex justify-content-center gap-4 flex-wrap me-3">
-              <a href="/projects.html" class="text-white text-decoration-none">Projects</a>
-              <a href="/about.html" class="text-white text-decoration-none">About</a>
-              <a href="/contact.html" class="text-white text-decoration-none">Contact</a>
-            </div>
-          </nav>
-        </div>
-      </header>
-
-  <!-- Home Section -->
-  <section class="d-flex flex-column align-items-center text-center py-5">
-    <div class="home_img mb-4">
-      <img src="/assets/website pfp.jpg" alt="Profile" class="rounded-circle" style="width: 200px; height: 200px; object-fit: cover;" />
-    </div>
-
-    <div class="home_content mb-4">
-      <h1>Hi, I'm Federica</h1>
-      <h3 class="typing_text">Junior UX/UI Designer | Product Manager | Junior Front-End Dev
-      </h3>
-    </div>
-
-    <div class="social_icons d-flex gap-4 mb-3">
-      <a href="https://www.linkedin.com/in/federicaziaco/" class="text-white fs-1"><i class="fa-brands fa-linkedin"></i></a>
-      <a href="https://github.com/feffyx" class="text-white fs-1"><i class="fa-brands fa-github"></i></a>
-    </div>
-
-    <a href="/assets/federica_ziaco_updated_cv_11-04-2025.pdf" class="btn btn-light mt-2">My CV</a>
-  </section>
-
-  <section class="d-flex flex-column align-items-center text-center py-5">
-    <div class="title_section mb-4">
-      <h1>Currently working on</h1>
-      <section class="container py-5">
-        <div class="row align-items-center">
-          <!-- Left: Text -->
-          <!-- <div class="col-md-6 mb-4 mb-md-0">
-            <h2>Molly's Canvas</h2>
-            <p>This is a short description of what I'm currently working on. It includes the goal, tools used, and progress update.</p>
+      <div class="container-fluid d-flex justify-content-between align-items-center">
+        <a href="/home.html" class="h3 text-white text-decoration-none fw-bold ms-3">Federica</a>
+        <nav>
+          <div class="d-flex justify-content-center gap-4 flex-wrap me-3">
+            <a href="/projects.html" class="text-white text-decoration-none">Projects</a>
+            <a href="/about.html" class="text-white text-decoration-none">About</a>
+            <a href="/contact.html" class="text-white text-decoration-none">Contact</a>
           </div>
-       -->
-          <!-- Right: Image with overlay -->
-          <div class="col-md-6 position-relative project-image-wrapper">
-            <img src="/assets/mollyscanvas.jpg" alt="Molly's Canvas" class="img-fluid rounded shadow project-image" />
-            <div class="project-overlay d-flex flex-column justify-content-center align-items-center text-center text-white px-4">
-              <h4>Molly's Canvas</h4>
-              <!-- <p></p> -->
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  </section>
+        </nav>
+      </div>
+    </header>
 
+    <!-- Intro Section -->
+    <section class="intro d-flex align-items-center p-5">
+      <div class="profile-img me-4">
+        <img src="/assets/website pfp.jpg" alt="Profile" class="rounded-circle" style="width: 200px; height: 200px; object-fit: cover;">
+      </div>
+
+      <div class="intro-text">
+        <h1>Hi, I'm Federica</h1>
+        <h3>Junior UX/UI Designer | Product Manager | Junior Front-End Dev</h3>
+
+        <div class="social-icons d-flex gap-3 mt-3">
+          <a href="https://www.linkedin.com/in/federicaziaco/" class="text-white fs-3">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/feffyx" class="text-white fs-3">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+
+        <a href="/assets/federica_ziaco_updated_cv_11-04-2025.pdf" class="btn btn-light mt-3">My CV</a>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects p-5">
+      <h2 class="mb-4 text-center">Currently working on</h2>
+      <div class="project-grid">
+        <!-- Example Project Card -->
+        <div class="project-card" onclick="openProjectModal('project1')">
+          <img src="/assets/mollyscanvas.jpg" alt="Project 1" />
+          <div class="overlay">Molly's Canvas</div>
+        </div>
+        <!-- Add more .project-card elements as needed -->
+      </div>
+    </section>
+
+    <!-- Modal Overlay -->
+<!-- Modal Overlay -->
+<div id="project-modal" class="modal-overlay" onclick="closeProjectModal()">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <h3 id="modal-title">Project Title</h3>
+    <div id="modal-media"></div> <!-- Qui mettiamo img o video -->
+    <p id="modal-description">Here is the project description.</p>
+  </div>
+</div>
+
+  </div>
+
+  <!-- JS Modal Logic -->
+<script>
+  function openProjectModal(projectId) {
+    const modal = document.getElementById('project-modal');
+    const title = document.getElementById('modal-title');
+    const desc = document.getElementById('modal-description');
+    const media = document.getElementById('modal-media');
+
+    if (projectId === 'project1') {
+      title.textContent = "Molly's Canvas";
+      desc.textContent = "A digital painting app built with React and HTML Canvas.";
+      media.innerHTML = `<img src="/assets/mollyscanvas.jpg" alt="Project Preview">`;
+    }
+
+    // mostra il modal
+    modal.style.display = 'flex';
+  }
+
+  function closeProjectModal() {
+    document.getElementById('project-modal').style.display = 'none';
+  }
+</script>
 </body>
 </html>
-
-<!-- ciao -->
