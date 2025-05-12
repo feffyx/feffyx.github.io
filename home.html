@@ -53,48 +53,105 @@
     <section class="projects p-5">
       <h2 class="mb-4 text-center">Currently working on</h2>
       <div class="project-grid">
-        <!-- Example Project Card -->
         <div class="project-card" onclick="openProjectModal('project1')">
-          <img src="/assets/mollyscanvas.jpg" alt="Project 1" />
+          <img src="/assets/Molly.png" alt="Molly's Canvas" />
           <div class="overlay">Molly's Canvas</div>
         </div>
-        <!-- Add more .project-card elements as needed -->
+
+        <div class="project-card" onclick="openProjectModal('project2')">
+          <img src="/assets/Drum.PNG" alt="DrumKit" />
+          <div class="overlay">DrumKit</div>
+        </div>
+
+        <div class="project-card" onclick="openProjectModal('project4')">
+          <img src="/assets/tarotapp.png" alt="Napoli Tarots" />
+          <div class="overlay">Napoli Tarots</div>
+        </div>
+
+        <div class="project-card" onclick="openProjectModal('project3')">
+          <img src="/assets/BetterdaysIcon.png" alt="Better Days" />
+          <div class="overlay">Better Days</div>
+        </div>
       </div>
     </section>
 
     <!-- Modal Overlay -->
-<!-- Modal Overlay -->
-<div id="project-modal" class="modal-overlay" onclick="closeProjectModal()">
-  <div class="modal-content" onclick="event.stopPropagation()">
-    <h3 id="modal-title">Project Title</h3>
-    <div id="modal-media"></div> <!-- Qui mettiamo img o video -->
-    <p id="modal-description">Here is the project description.</p>
-  </div>
-</div>
-
+    <div id="project-modal" class="modal-overlay" onclick="closeProjectModal()">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <h3 id="modal-title">Project Title</h3>
+        <div id="modal-media"></div>
+        <p id="modal-description">Here is the project description.</p>
+      </div>
+    </div>
   </div>
 
   <!-- JS Modal Logic -->
-<script>
-  function openProjectModal(projectId) {
-    const modal = document.getElementById('project-modal');
-    const title = document.getElementById('modal-title');
-    const desc = document.getElementById('modal-description');
-    const media = document.getElementById('modal-media');
+  <script>
+    function openProjectModal(projectId) {
+      const modal = document.getElementById('project-modal');
+      const title = document.getElementById('modal-title');
+      const desc = document.getElementById('modal-description');
+      const media = document.getElementById('modal-media');
 
-    if (projectId === 'project1') {
-      title.textContent = "Molly's Canvas";
-      desc.textContent = "A digital painting app built with React and HTML Canvas.";
-      media.innerHTML = `<img src="/assets/mollyscanvas.jpg" alt="Project Preview">`;
+      let projectData = {
+        title: '',
+        description: '',
+        images: []
+      };
+
+      if (projectId === 'project1') {
+        projectData = {
+          title: "Molly's Canvas",
+          description: "Molly's Canvas is a 2D novel game made with Unity that tells the story of Molly, a girl struggling with an Eating Disorder.",
+          images: [
+            '/assets/mollyscanvas.jpg',
+            '/assets/MollysCanvas.PNG'
+          ]
+        };
+      }
+
+      if (projectId === 'project2') {
+        projectData = {
+          title: "DrumKit",
+          description: "An app that produces sounds of a drumset using hand gestures.",
+          images: [
+            '/assets/handgesture.mov'
+          ]
+        };
+      }
+
+      if (projectId === 'project3') {
+        projectData = {
+          title: "Better Days",
+          description: "A mood tracker app to help people keep track of their emotional progress.",
+          images: [
+            '/assets/diaryentry.jpg'
+          ]
+        };
+      }
+
+      if (projectId === 'project4') {
+        projectData = {
+          title: "Napoli Tarots",
+          description: "An app that helps people discover the mysteries and legends of Naples by collecting cards.",
+          images: [
+            '/assets/tarots.png'
+          ]
+        };
+      }
+
+      title.textContent = projectData.title;
+      desc.textContent = projectData.description;
+      media.innerHTML = projectData.images
+        .map(src => `<img src="${src}" alt="Project Image" style="max-width:100%; margin-bottom: 10px;">`)
+        .join('');
+
+      modal.style.display = 'flex';
     }
 
-    // mostra il modal
-    modal.style.display = 'flex';
-  }
-
-  function closeProjectModal() {
-    document.getElementById('project-modal').style.display = 'none';
-  }
-</script>
+    function closeProjectModal() {
+      document.getElementById('project-modal').style.display = 'none';
+    }
+  </script>
 </body>
 </html>
