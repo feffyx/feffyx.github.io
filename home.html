@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,12 +30,13 @@
     <!-- Intro Section -->
     <section class="intro d-flex align-items-center p-5">
       <div class="profile-img me-4">
-        <img src="/assets/website pfp.jpg" alt="Profile" class="rounded-circle" style="width: 200px; height: 200px; object-fit: cover;">
+        <img src="/assets/website pfp.jpg" alt="Profile" class="rounded-circle"
+          style="width: 200px; height: 200px; object-fit: cover;">
       </div>
 
       <div class="intro-text">
         <h1>Hi, I'm Federica</h1>
-        <h3>Junior UX/UI Designer | Product Manager | Junior Front-End Dev</h3>
+        <h3>UX/UI Designer | Junior Front-End Dev</h3>
 
         <div class="social-icons d-flex gap-3 mt-3">
           <a href="https://www.linkedin.com/in/federicaziaco/" class="text-white fs-3">
@@ -87,6 +89,31 @@
 
   <!-- JS Modal Logic -->
   <script>
+
+document.querySelector('.profile-img').addEventListener('mousemove', function (e) {
+  const profileImgContainer = document.querySelector('.profile-img');
+  const profileImg = document.querySelector('.profile-img img');
+  const { offsetX, offsetY, target } = e;
+  const { clientWidth, clientHeight } = target;
+
+  // Calcola la direzione del movimento
+const x = (offsetX / clientWidth) * 150 - 100; // Aumentato il movimento orizzontale
+const y = (offsetY / clientHeight) * 150 - 100; // Aumentato il movimento verticale
+
+  // Applica il movimento all'immagine e al contenitore
+  profileImg.style.transform = `translate(${x}px, ${y}px)`;
+  profileImgContainer.style.transform = `translate(${x * 0.5}px, ${y * 0.5}px)`; // Movimento del contenitore (frame)
+});
+
+document.querySelector('.profile-img').addEventListener('mouseleave', function () {
+  // Reset quando il cursore esce dall'immagine
+  const profileImg = document.querySelector('.profile-img img');
+  const profileImgContainer = document.querySelector('.profile-img');
+  profileImg.style.transform = 'translate(0, 0)';
+  profileImgContainer.style.transform = 'translate(0, 0)';
+});
+
+
     function openProjectModal(projectId) {
       const modal = document.getElementById('project-modal');
       const title = document.getElementById('modal-title');
@@ -154,4 +181,5 @@
     }
   </script>
 </body>
+
 </html>
