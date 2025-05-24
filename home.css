@@ -25,28 +25,18 @@
 }
 
 .space-title {
-  font-family: 'Orbitron', monospace;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Consolas', monospace;
   font-size: 4rem;
-  font-weight: 900;
-  background: linear-gradient(45deg, #00ffff, #ff00ff, #ffff00);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  color: #fff;
   margin-bottom: 1rem;
-  animation: colorShift 4s infinite;
-}
-
-@keyframes colorShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
 }
 
 .space-subtitle {
   font-size: 1.5rem;
-  color: #00ffff;
+  color: #fff;
   margin-bottom: 2rem;
-  font-family: 'Orbitron', monospace;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Consolas', monospace;
 }
 
 .space-description {
@@ -61,8 +51,8 @@
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  border: 3px solid #00ffff;
-  box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+  border: 3px solid #fff;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
   margin: 0 auto 2rem;
   overflow: hidden;
   position: relative;
@@ -92,10 +82,10 @@
 
 .space-btn {
   padding: 1rem 2rem;
-  background: linear-gradient(45deg, #00ffff, #0099ff);
+  background: #fff;
   color: #000;
   text-decoration: none;
-  font-family: 'Orbitron', monospace;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Consolas', monospace;
   font-weight: 700;
   border: none;
   border-radius: 30px;
@@ -103,7 +93,7 @@
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
 }
 
 .space-btn::before {
@@ -113,13 +103,13 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
   transition: left 0.5s;
 }
 
 .space-btn:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 255, 255, 0.5);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.5);
 }
 
 .space-btn:hover::before {
@@ -127,12 +117,20 @@
 }
 
 .space-btn.secondary {
-  background: linear-gradient(45deg, #ff00ff, #ff0099);
-  box-shadow: 0 5px 15px rgba(255, 0, 255, 0.3);
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+.space-btn.secondary::before {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
 }
 
 .space-btn.secondary:hover {
-  box-shadow: 0 10px 25px rgba(255, 0, 255, 0.5);
+  background: #fff;
+  color: #000;
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
 }
 
 /* Projects Section */
@@ -142,12 +140,12 @@
 }
 
 .section-title {
-  font-family: 'Orbitron', monospace;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Consolas', monospace;
   font-size: 3rem;
   font-weight: 700;
-  color: #00ffff;
+  color: #fff;
   margin-bottom: 3rem;
-  text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
 }
 
 .projects-grid {
@@ -160,7 +158,7 @@
 
 .project-pod {
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(0, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 20px;
   padding: 2rem;
   backdrop-filter: blur(10px);
@@ -177,7 +175,7 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: conic-gradient(transparent, rgba(0, 255, 255, 0.1), transparent);
+  background: conic-gradient(transparent, rgba(255, 255, 255, 0.1), transparent);
   animation: rotate360 4s linear infinite;
   opacity: 0;
   transition: opacity 0.3s;
@@ -194,13 +192,13 @@
 
 .project-pod:hover {
   transform: translateY(-10px);
-  border-color: #00ffff;
-  box-shadow: 0 20px 40px rgba(0, 255, 255, 0.2);
+  border-color: #fff;
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.2);
 }
 
 .project-pod h3 {
-  font-family: 'Orbitron', monospace;
-  color: #ff00ff;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Consolas', monospace;
+  color: #fff;
   margin-bottom: 1rem;
   font-size: 1.3rem;
 }

@@ -23,9 +23,9 @@
     <div class="nav-content">
       <a href="#" class="space-logo">FEDERICA</a>
       <div class="nav-links">
-        <a href="#projects" class="nav-link">PROJECTS</a>
-        <a href="#about" class="nav-link">ABOUT</a>
-        <a href="#contact" class="nav-link">CONTACT</a>
+        <a href="/projects.html" class="nav-link">PROJECTS</a>
+        <a href="/about.html" class="nav-link">ABOUT</a>
+        <a href="/contact.html" class="nav-link">CONTACT</a>
       </div>
     </div>
   </nav>
@@ -74,6 +74,9 @@
         <div class="project-pod">
           <h3>Molly's Canvas</h3>
           <p>A 2D novel game exploring emotional landscapes through interactive storytelling, built with Unity to help players navigate mental health awareness.</p>
+              <div class="play-overlay">
+        <div class="play-icon"></div>
+    </div>
         </div>
         
         <div class="project-pod">
@@ -93,7 +96,16 @@
       </div>
     </section>
   </div>
-
+<div class="video-modal" id="videoModal">
+    <div class="video-container">
+        <div class="video-header">
+            <h3 class="video-title" id="modalTitle">Project Video</h3>
+            <button class="close-btn" id="closeModal">×</button>
+        </div>
+        <iframe class="video-player" id="videoPlayer" src="" frameborder="0" allowfullscreen></iframe>
+        <div class="video-description" id="videoDescription"></div>
+    </div>
+</div>
   <script src="/main.js"></script>
   <script src="/home.js"></script>
 </body>
