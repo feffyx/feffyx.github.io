@@ -34,9 +34,9 @@ const projectFiles = {
   'mollys-canvas': {
     title: "Molly's Canvas - Game Demo",
     type: 'video',
-    url: 'https://player.vimeo.com/video/123456789',
-    description: "Interactive demo showcasing the emotional storytelling mechanics and Unity-based gameplay of Molly's Canvas.",
-    details: "This 2D novel game combines narrative storytelling with interactive elements to create awareness around mental health topics."
+    url: 'https://www.youtube.com/watch?v=0rowutVuBng',
+    description: "Walkthrough showcasing the emotional storytelling mechanics and Unity-based gameplay of Molly's Canvas.",
+    details: "This 2D novel game combines narrative storytelling with interactive elements to create awareness around eating disorders topics."
   },
   'eco-vibe-lumo': {
     title: "Echo.Vibe.Lumo",
