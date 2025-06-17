@@ -54,7 +54,7 @@ const projectFiles = {
     details: "Built with advanced motion detection technology to create an immersive musical experience."
   },
   'napoli-tarots': {
-    title: "Napoli Tarots - App Preview",
+    title: "Napoli Tarots - Project Prei",
     type: 'image',
     url: 'https://via.placeholder.com/800x600/1a1a1a/ffffff?text=Napoli+Tarots+App+Screenshots',
     description: "Visual showcase of the mystical app combining Neapolitan legends with digital card collection.",
