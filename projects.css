@@ -211,6 +211,9 @@
     .app-icon.drumkit { background: linear-gradient(135deg, #30336b, #130f40); }
     .app-icon.napoli { background: linear-gradient(135deg, #ff9ff3, #f368e0); }
     .app-icon.better { background: linear-gradient(135deg, #26d0ce, #1dd1a1); }
+    .app-icon.mindful { background: linear-gradient(135deg, #a8e6cf, #81c784); }
+    .app-icon.cipher { background: linear-gradient(135deg, #b19cd9, #9575cd); }
+    .app-icon.aurora { background: linear-gradient(135deg, #ff9a9e, #fecfef); }
 
     .project-info {
       flex: 1;
@@ -226,30 +229,9 @@
     .project-category {
       font-size: 0.9rem;
       color: rgba(255, 255, 255, 0.6);
-      margin-bottom: 0.8rem;
+      margin-bottom: 1rem;
       text-transform: uppercase;
       letter-spacing: 1px;
-    }
-
-    .project-rating {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .stars {
-      display: flex;
-      gap: 2px;
-    }
-
-    .star-filled {
-      color: #ffd700;
-    }
-
-    .rating-text {
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.7);
     }
 
     .project-quick-info {

@@ -1,0 +1,363 @@
+ /* App icon styling to make images fit like app icons */
+    .app-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      flex-shrink: 0;
+    }
+    
+    .app-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 12px;
+    }
+    
+    /* Expanded view app icon styling */
+    .expanded-header .app-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 16px;
+      margin-right: 20px;
+    }
+    
+    .expanded-header .app-icon img {
+      border-radius: 16px;
+    }
+    
+    /* Project header layout */
+    .project-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+    
+    .project-info {
+      flex: 1;
+      min-width: 0;
+    }
+    
+    .project-title {
+      margin: 0 0 5px 0;
+      font-size: 1.2em;
+      font-weight: 600;
+    }
+    
+    .project-category {
+      margin: 0;
+      opacity: 0.7;
+      font-size: 0.9em;
+    }
+    
+    /* Expanded header layout */
+    .expanded-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .expanded-header h2 {
+      margin: 0 0 5px 0;
+      font-size: 1.8em;
+      font-weight: 600;
+    }
+    
+    .expanded-header p {
+      margin: 0;
+      opacity: 0.8;
+      font-size: 1.1em;
+    }
+
+    /* Video Modal Styling */
+    .video-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 10000;
+      backdrop-filter: blur(10px);
+    }
+
+    .video-modal.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .video-modal-content {
+      position: relative;
+      width: 90%;
+      max-width: 800px;
+      background: rgba(20, 20, 30, 0.95);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .close-video {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 10001;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: background-color 0.2s ease;
+    }
+
+    .close-video:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      overflow: hidden;
+      border-radius: 15px;
+    }
+
+    .video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+    }
+
+    /* Case Study Section */
+    .case-study-section {
+      margin: 30px 0;
+      padding: 25px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .case-study-title {
+      font-size: 1.4em;
+      margin-bottom: 15px;
+      color: #667eea;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .case-study-content {
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+
+    /* Screenshots Gallery */
+    .screenshots-section {
+      margin: 30px 0;
+    }
+
+    .screenshots-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .screenshot {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .screenshot:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    }
+
+    .screenshot img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Technology Stack Styling */
+    .tech-stack-section {
+      margin: 30px 0;
+    }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .tech-item {
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 15px;
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tech-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
+      border-color: rgba(102, 126, 234, 0.3);
+    }
+
+    .tech-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .tech-item:hover::before {
+      left: 100%;
+    }
+
+    .tech-icon {
+      font-size: 2em;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .tech-name {
+      font-size: 0.9em;
+      font-weight: 500;
+      opacity: 0.9;
+    }
+
+    /* Design Tools Section */
+    .design-tools-section {
+      margin: 30px 0;
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .tool-item {
+      background: linear-gradient(135deg, rgba(255, 107, 107, 0.1) 0%, rgba(255, 142, 83, 0.1) 100%);
+      border: 1px solid rgba(255, 107, 107, 0.2);
+      border-radius: 10px;
+      padding: 12px;
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .tool-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
+      border-color: rgba(255, 107, 107, 0.4);
+    }
+
+    .tool-icon {
+      font-size: 1.5em;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .tool-name {
+      font-size: 0.8em;
+      font-weight: 500;
+      opacity: 0.9;
+    }
+
+    /* Section Headers */
+    .section-header {
+      font-size: 1.3em;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+    }
+
+    .section-header i {
+      color: #667eea;
+    }
+
+    /* Responsive video modal */
+    @media (max-width: 768px) {
+      .video-modal-content {
+        width: 95%;
+        padding: 15px;
+      }
+      
+      .close-video {
+        top: 10px;
+        right: 15px;
+      }
+
+      .tech-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      }
+
+      .screenshots-gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Enhanced Stats Section */
+    .stats-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .stat-item {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 1.2em;
+      font-weight: 600;
+      color: #667eea;
+      margin-bottom: 5px;
+    }
+
+    .stat-label {
+      font-size: 0.9em;
+      opacity: 0.7;
+    }

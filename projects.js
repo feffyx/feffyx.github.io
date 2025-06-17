@@ -58,3 +58,5 @@
         ],
         techStack: ["Python", "OpenCV", "MediaPipe", "PyAudio", "Tkinter"],
         stats}}
+
+        
