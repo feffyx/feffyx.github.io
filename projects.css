@@ -80,7 +80,11 @@ body {
   cursor: pointer;
   transition: all 0.2s ease;
   color: #fff; /* testo bianco di default */
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+
 }
+
 
 .project-card:hover {
   background: #fff; /* sfondo diventa bianco */

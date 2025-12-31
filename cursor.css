@@ -1,15 +1,14 @@
 * {
-  cursor: none; /* disabilita cursore normale */
+  cursor: none;
 }
 
 #custom-cursor {
   position: fixed;
   top: 0;
   left: 0;
-  width: 20px; 
-  height: 30px;
-  pointer-events: none; /* non blocca click */
-  transform: translate(-50%, -50%);
+  width: 24px;
+  height: auto;
+  pointer-events: none;
   z-index: 9999;
-  transition: transform 0.1s linear; /* opzionale per extra smooth su scala/rotazioni */
+  will-change: transform;
 }
