@@ -26,11 +26,14 @@ body {
 /* FOTO */
 .about-photo {
   flex: 0 0 300px;
-  position: sticky;     /* resta fisso mentre scorri */
-  top: 40px;            /* inizia poco più sopra */
+  position: sticky;
+  top: 50%;
+  transform: translateY(-50%);
   align-self: flex-start;
   z-index: 1;
 }
+
+
 
 .about-photo img {
   width: 100%;

@@ -121,14 +121,4 @@ document.addEventListener('DOMContentLoaded', () => {
       showSlide(idx);
     });
   });
-
-  // ===== Aggiunta icona update sulla card di Airchestra =====
-  const airCard = document.querySelector('.project-card[data-project="airchestra"]');
-  if (airCard && !airCard.querySelector('.update-icon')) {
-    const span = document.createElement('span');
-    span.classList.add('update-icon');
-    span.textContent = '!';
-    airCard.appendChild(span);
-  }
-
 });
