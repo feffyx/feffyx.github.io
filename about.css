@@ -168,3 +168,120 @@ body {
   opacity: 1;
   transform: translateX(0);
 }
+
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablet e dispositivi medi */
+@media (max-width: 1024px) {
+  .layout {
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    gap: 40px;
+  }
+
+  .about-photo {
+    position: relative;
+    top: auto;
+    transform: none;
+    flex: 0 0 auto;
+    width: 250px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+  }
+
+  .content {
+    position: relative;
+    top: auto;
+    max-width: 90%;
+    padding: 30px 35px;
+  }
+
+  .sidebar {
+    flex: 0 0 auto;
+    position: relative;
+    top: auto;
+    transform: none;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .menu {
+    flex-direction: row;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .menu a {
+    font-size: 20px;
+    padding-right: 0;
+  }
+
+  .menu a::after {
+    bottom: -4px;
+  }
+}
+
+/* Mobile stretto */
+@media (max-width: 600px) {
+  .layout {
+    padding: 20px 15px;
+    gap: 20px;
+  }
+
+  .about-photo {
+    width: 200px;
+    margin-bottom: 15px;
+    padding-left: 0px;
+  }
+
+  .content {
+    padding: 25px 20px;
+    font-size: 0.95rem;
+  }
+
+  .content h2 {
+    font-size: 2rem;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .menu a {
+    font-size: 18px;
+  }
+
+  .menu a::after {
+    bottom: -3px;
+  }
+
+  .sidebar {
+    margin-bottom: 0;
+  }
+}
+
+/* Riduzione generale padding per dispositivi molto piccoli */
+@media (max-width: 400px) {
+  .about-photo {
+    width: 180px;
+  }
+
+  .content {
+    padding: 20px 15px;
+  }
+
+  .content h2 {
+    font-size: 1.8rem;
+  }
+
+  .menu a {
+    font-size: 16px;
+  }
+}
+
