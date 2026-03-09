@@ -1,14 +1,11 @@
 # FedericaZiaco✶ — Portfolio
+Welcome to my personal portfolio! ⭐️
 
-Personal portfolio website built from scratch with vanilla HTML, CSS, and JavaScript.  
-Live at **[feffyx.github.io](https://feffyx.github.io)**
+Check it out :) **[feffyx.github.io](https://feffyx.github.io)**
 
----
-
-## 📸 Preview
 
 <!-- Drop a screenshot here! e.g. assets/preview.png -->
-![Portfolio Preview](./preview/previewfile)
+![Portfolio Preview](preview/previewfile.png)
 
 ---
 
@@ -21,19 +18,6 @@ Live at **[feffyx.github.io](https://feffyx.github.io)**
 
 ---
 
-## 📁 Structure
-
-```
-feffyx.github.io/
-├── index.html
-├── about.html
-├── projects.html
-├── css/
-├── js/
-└── assets/
-```
-
----
 
 ## 📬 Connect
 
