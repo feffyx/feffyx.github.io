@@ -349,7 +349,7 @@ a {
 
 .scroll-hint::before {
   content: '↓';
-  font-size: 14px;
+  font-size: 20px;
   writing-mode: horizontal-tb;
   transform: rotate(180deg);
   animation: nudge 1.4s ease-in-out infinite;
