@@ -1,101 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Me - Federica Ziaco</title>
-  <link rel="stylesheet" href="about.css">
-  <link rel="stylesheet" href="cursor.css">
-  <!-- <link rel="stylesheet" href="styles.css"> -->
-  <script src="https://unpkg.com/@barba/core"></script>
-
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About — Federica Ziaco</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="about.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Unbounded:wght@400;700;900&family=Martian+Mono:wght@400;700&display=swap" rel="stylesheet"/>
 </head>
+<body class="about-page">
 
-<body>
+  <!-- NAV -->
+  <nav class="about-nav">
+    <a href="index.html" class="about-nav__back">← HOME</a>
+    <span class="about-nav__name">FEDERICA ZIACO</span>
+    <a href="projects.html" class="about-nav__fwd">PROJECTS →</a>
+  </nav>
 
-  <body>
-    <div class="page">
-      <div class="layout">
+  <main class="about-main">
 
-        <!-- FOTO -->
-        <div class="about-photo">
-          <img src="/img/Federica Ziaco.png" alt="Federica Ziaco">
+    <!-- ═══ HERO BLOCK ═══ -->
+    <section class="about-hero">
+      <div class="about-hero__text">
+        <p class="about-eyebrow">// SUBJECT FILE — ABOUT //</p>
+        <h1 class="about-title">
+          <span class="about-title--serif">Federica</span>
+          <span class="about-title--block">ZIACO</span>
+        </h1>
+        <p class="about-roles">UX/UI Designer &nbsp;·&nbsp; Videogame Designer &nbsp;·&nbsp; Spatial Designer</p>
+      </div>
+      <div class="about-hero__photo">
+        <!-- Replace src with your actual photo path -->
+        <div class="photo-frame">
+          <img src="img/Federica Ziaco.png" alt="Federica Ziaco" onerror="this.closest('.photo-frame').classList.add('no-img')"/>
+          <div class="photo-caption">FEDERICA ZIACO — 2025</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="about-rule"></div>
+
+    <!-- ═══ BIO ═══ -->
+    <section class="about-section about-section--bio reveal">
+      <div class="about-section__label">[ 01 — BIO ]</div>
+      <div class="about-section__content">
+        <p class="about-bio__lead">Some people might argue that experience is everything — I proved that <em>passion and persistence</em> can be just as powerful.</p>
+        <p class="about-bio__body">My journey into the creative field began in high school, where I specialised in set design. During that time I developed skills in architectural and design software, scriptwriting, storytelling, and illustration.</p>
+        <p class="about-bio__body">Spending three of those years at home during COVID-19 led me to reflect deeply on my future in the arts. That period of uncertainty opened the door to a new path — I enrolled at <em>Suor Orsola Benincasa University</em>, where I'm currently studying Linguistics for New Technologies, a multidisciplinary programme bridging language, technology, and communication.</p>
+        <p class="about-bio__body">Driven by curiosity and adaptability, I've built a foundation that blends creativity with technology — constantly exploring new ways to turn ideas into impactful experiences. During university I took Web Development courses and worked a summer internship as a <em>Web Designer in London</em>.</p>
+        <p class="about-bio__body">My hobbies are a major source of inspiration in my work at the <em>Apple Developer Academy</em>. With a deep passion for music and video games, I've long dreamed of becoming a game designer — and having the chance to actually create games there has been one of the most rewarding experiences so far.</p>
+      </div>
+    </section>
+
+    <div class="about-rule"></div>
+
+    <!-- ═══ LANGUAGES ═══ -->
+    <section class="about-section reveal">
+      <div class="about-section__label">[ 02 — LANGUAGES ]</div>
+      <div class="about-section__content">
+        <div class="lang-grid">
+          <div class="lang-item">
+            <span class="lang-flag">🇮🇹</span>
+            <span class="lang-name">Italian</span>
+            <span class="lang-level">Native</span>
+          </div>
+          <div class="lang-item">
+            <span class="lang-flag">🇬🇧</span>
+            <span class="lang-name">English</span>
+            <span class="lang-level">C2</span>
+          </div>
+          <div class="lang-item">
+            <span class="lang-flag">🇩🇪</span>
+            <span class="lang-name">German</span>
+            <span class="lang-level">B1</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="about-rule"></div>
+
+    <!-- ═══ SKILLS ═══ -->
+    <section class="about-section reveal">
+      <div class="about-section__label">[ 03 — SKILLS ]</div>
+      <div class="about-section__content skills-grid">
+
+        <div class="skill-group">
+          <p class="skill-group__title">🎨 Design Tools</p>
+          <div class="skill-tags">
+            <span class="skill-tag">Figma</span>
+            <span class="skill-tag">Sketch</span>
+            <span class="skill-tag">Procreate</span>
+            <span class="skill-tag">Blender</span>
+            <span class="skill-tag">Reality Composer Pro</span>
+            <span class="skill-tag">Photoshop</span>
+            <span class="skill-tag">SketchUp</span>
+          </div>
         </div>
 
-        <!-- TESTO -->
-        <main class="content">
-          <h2>About Me</h2>
-          <p>
-            Some people might argue that experience is everything, but I proved that passion and persistence can be just
-            as powerful.</br>
-            My journey into the creative field began in high school, where I specialized in set design. During that
-            time, I developed skills in architectural and design software, scriptwriting, storytelling, and
-            illustration.</br>
-            However, spending three of those years at home due to the COVID-19 pandemic led me to reflect deeply on my
-            future in the arts.
-            </br>This period of uncertainty opened the door to a new path. I enrolled at Suor Orsola Benincasa
-            University, where I’m currently studying Linguistics for New Technologies—a multidisciplinary program that
-            bridges language, technology, and communication.
-            </br>My studies include informatics, advertising, AI fundamentals, and legal aspects of digital innovation.
-            Driven by curiosity and adaptability, I’ve built a foundation that blends creativity with technology
-            constantly exploring new ways to turn ideas into impactful experiences, that's why during my time at
-            university I have also taken Web Development courses and worked a summer internship as a Web Designer in
-            London.
-            </br>My hobbies are a major source of inspiration in the work I do at the Apple Developer Academy. With a
-            deep passion for music and video games, I’ve long dreamed of becoming a game designer. Having the
-            opportunity to actually create games at the Academy has been one of the most rewarding experiences so far.
-            </br>It allowed me to explore and grow in areas I’m truly passionate about—such as audio design,
-            illustration, and scriptwriting.
-
-          <div class="about-languages">
-            <h3>🌍 Languages</h3>
-            <ul>
-              <li>Italian (Native)</li>
-              <li>English (C2)</li>
-              <li>German (B1)</li>
-            </ul>
+        <div class="skill-group">
+          <p class="skill-group__title">💻 Technologies</p>
+          <div class="skill-tags">
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">Unity</span>
+            <span class="skill-tag">Swift</span>
+            <span class="skill-tag">SwiftUI</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Spring</span>
+            <span class="skill-tag">Maven</span>
+            <span class="skill-tag">Java</span>
           </div>
+        </div>
 
-          <div class="about-skills">
-            <h3>Skills & Tools</h3>
-            <div class="skills-group">
-              <h4>🎨 Design Tools </h4>
-              <p>Figma, Sketch, Procreate, Blender, Reality Composer Pro, Photoshop, SketchUp</p>
-            </div>
-            <div class="skills-group">
-              <h4>💻 Technologies</h4>
-              <p>HTML, CSS, JavaScript, Git, Unity, Swift, SwiftUI, SQL, Spring, Maven, Java</p>
-            </div>
-            <div class="skills-group">
-              <h4>🤍 Soft Skills</h4>
-              <p>CBL Framework, SCRUM, Project Management, Problem Solving, Creative, Teamwork, Leadership</p>
-            </div>
+        <div class="skill-group">
+          <p class="skill-group__title">🤍 Soft Skills</p>
+          <div class="skill-tags">
+            <span class="skill-tag skill-tag--soft">CBL Framework</span>
+            <span class="skill-tag skill-tag--soft">SCRUM</span>
+            <span class="skill-tag skill-tag--soft">Project Management</span>
+            <span class="skill-tag skill-tag--soft">Problem Solving</span>
+            <span class="skill-tag skill-tag--soft">Creative</span>
+            <span class="skill-tag skill-tag--soft">Teamwork</span>
+            <span class="skill-tag skill-tag--soft">Leadership</span>
           </div>
-
-          <div class="about-contact">
-            <h3>💌 Contact</h3>
-            <p>Email: <a href="mailto:ziacofederica@gmail.com">ziacofederica@gmail.com</a></p>
-            <a href="/pdf/Federica Ziaco CV 2025.pdf" download class="cv">Download CV</a>
-          </div>
-        </main>
-
-        <!-- SIDEBAR -->
-        <aside class="sidebar">
-          <nav class="menu">
-            <a href="/index.html">Home <span class="arrow">></span></a>
-            <a href="/projects.html">Projects <span class="arrow">></span></a>
-          </nav>
-        </aside>
+        </div>
 
       </div>
-    </div>
-  </body>
+    </section>
 
+    <div class="about-rule"></div>
 
-  <img src="/img/cursor.png" id="custom-cursor" alt="Custom Cursor">
-  <script src="main.js"></script>
-  <script src="cursor.js"></script>
+    <!-- ═══ CONTACT ═══ -->
+    <section class="about-section reveal">
+      <div class="about-section__label">[ 04 — CONTACT ]</div>
+      <div class="about-section__content contact-block">
+        <p class="contact-intro">Want to work together? Let's talk.</p>
+        <a href="mailto:ziacofederica@gmail.com" class="contact-email">ziacofederica@gmail.com ↗</a>
+        <div class="contact-links">
+          <a href="https://github.com/feffyx" target="_blank" class="contact-pill">Github ↗</a>
+          <a href="https://linkedin.com/in/yourusername" target="_blank" class="contact-pill">LinkedIn ↗</a>
+          <a href="https://medium.com/@yourusername" target="_blank" class="contact-pill">Medium ↗</a>
+          <a href="pdf/Federica Ziaco CV 2025.pdf" download class="contact-pill contact-pill--cv">Download CV ↓</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-name">FEDERICA ZIACO</div>
+    <div class="footer-copy">© 2025 — ALL WRONGS RESERVED</div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="about.js"></script>
 </body>
-
 </html>

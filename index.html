@@ -5,73 +5,131 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Federica Ziaco</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="cursor.css">
-  <script src="https://unpkg.com/@barba/core"></script>
-
+  <link rel="stylesheet" href="style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Unbounded:wght@400;700;900&family=Martian+Mono:wght@400;700&family=Press+Start+2P&display=swap"
+    rel="stylesheet" />
 </head>
 
 <body>
 
+  <!-- HERO — fullscreen -->
+  <section class="hero" id="hero">
 
-  <body>
-    <div class="page">
-      <!-- VIDEO BACKGROUND -->
-      <div class="video-bg">
-        <video autoplay muted loop playsinline>
-          <source src="/video/test.mp4" type="video/mp4">
-          Your browser does not support HTML5 video.
-        </video>
-        <div class="overlay"></div>
-      </div>
+    <!-- BG image placeholder (replace with your own) -->
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
 
-      <div class="layout">
+    <!-- Halftone dot texture -->
+    <div class="halftone"></div>
 
-        <!-- MAIN CONTENT -->
-        <main class="content">
-          <h1>Federica Ziaco</h1>
-          <h2>UX/UI · XR · Front-End · Videogame Designer</h2>
-
-          <p class="bio">
-            Designer working between interaction, language and emerging technologies.
-            Interested in cognitive load, spatial interfaces and research driven design.
-          </p>
-
-          <div class="links">
-            <a href="https://github.com/feffyx" target="_blank">GitHub</a>
-            <a href="https://www.linkedin.com/in/federicaziaco/" target="_blank">LinkedIn</a>
-            <a href="/pdf/Federica Ziaco CV 2025.pdf" download class="cv">Download CV</a>
-          </div>
-        </main>
-
-        <!-- SIDE MENU / CENTERED RIGHT -->
-        <aside class="sidebar">
-
-          <!-- Menu centrato verticale -->
-          <nav class="menu">
-            <a href="/about.html">About me <span class="arrow">></span></a>
-            <a href="/projects.html">Projects <span class="arrow">></span></a>
-          </nav>
-
-          <!-- Last update in alto a destra -->
-          <div class="updates">
-            <p class="updates-title">Read my latest article:</p>
-            <a href="https://medium.com/@ziacofederica/spatial-design-for-focus-and-cognitive-load-101b31b5caf2"
-              target="_blank">
-              Designing for Focus and Cognitive Load
-            </a>
-          </div>
-        </aside>
-
-      </div>
-
+    <!-- Big name -->
+    <div class="hero-name-wrap">
+      <h1 class="hero-name" id="heroName">
+        <span class="name-word name-word--serif">Federica</span><span class="name-word name-word--block">Ziaco</span>
+      </h1>
     </div>
-    
-  </body>
 
-  <img src="/img/cursor.png" id="custom-cursor" alt="Custom Cursor">
-  <script src="main.js"></script>
-  <script src="cursor.js"></script>
+    <!-- Centre meta: roles + links stacked -->
+    <div class="hero-center">
+      <p class="hero-role">UX/UI Designer &nbsp;·&nbsp; Videogame Designer &nbsp;·&nbsp; Spatial Designer</p>
+      <p class="hero-location">Your City &nbsp;|&nbsp; <span id="heroTime">--:--</span></p>
+      <div class="hero-links">
+        <a href="https://github.com/yourusername" target="_blank" class="hero-link">Github ↗</a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank" class="hero-link">LinkedIn ↗</a>
+        <a href="https://medium.com/@yourusername" target="_blank" class="hero-link">Medium ↗</a>
+        <a href="cv.pdf" download class="hero-link hero-link--cv">Download CV ↓</a>
+      </div>
+    </div>
+
+    <!-- Bottom scrolling tag line -->
+    <div class="hero-ticker">
+      <div class="ticker-track">
+        <span class="ticker-inner">OPEN TO WORK &nbsp;✦&nbsp; UX/UI DESIGN &nbsp;✦&nbsp; VIDEOGAME DESIGN &nbsp;✦&nbsp;
+          SPATIAL DESIGN &nbsp;✦&nbsp; OPEN TO WORK &nbsp;✦&nbsp; UX/UI DESIGN &nbsp;✦&nbsp; VIDEOGAME DESIGN
+          &nbsp;✦&nbsp; SPATIAL DESIGN &nbsp;✦&nbsp;</span>
+      </div>
+    </div>
+
+    <!-- Floating nav sticker buttons -->
+    <div class="hero-mobile-nav">
+      <a href="about.html" class="sticker-btn sticker-btn--about" style="--r:-6deg">
+        <span class="sticker-btn__label">ABOUT ME</span>
+        <span class="sticker-btn__sub">Who I am →</span>
+      </a>
+      <a href="projects.html" class="sticker-btn sticker-btn--projects" style="--r:5deg">
+        <span class="sticker-btn__label">PROJECTS</span>
+        <span class="sticker-btn__sub">My work →</span>
+      </a>
+    </div>
+
+    <div class="scroll-hint">SCROLL</div>
+  </section>
+
+  <!-- CONTENT SECTION -->
+  <section class="content">
+
+    <!-- LATEST / NEWS BOARD -->
+    <div class="news-section reveal">
+      <div class="news-header">
+        <span class="news-label">[ 01 — LATEST ]</span>
+        <h2 class="news-big">Drops<em>&amp;</em><br>Updates</h2>
+      </div>
+
+      <div class="news-list">
+
+        <a href="https://medium.com" target="_blank" class="news-item reveal">
+          <div class="news-item__meta">
+            <span class="news-tag">ARTICLE</span>
+            <span class="news-date">08.03.2025</span>
+          </div>
+          <h3 class="news-item__title">How I Built a Full-Stack App in 48 Hours</h3>
+          <p class="news-item__desc">Rapid prototyping, sleep deprivation, and what I learned.</p>
+          <span class="news-item__cta">Read ↗</span>
+        </a>
+
+        <a href="https://github.com" target="_blank" class="news-item reveal">
+          <div class="news-item__meta">
+            <span class="news-tag news-tag--project">PROJECT</span>
+            <span class="news-date">21.02.2025</span>
+          </div>
+          <h3 class="news-item__title">Released: OpenWeatherDash v1.2</h3>
+          <p class="news-item__desc">Dark mode, location presets, animated icons. Open source.</p>
+          <span class="news-item__cta">View ↗</span>
+        </a>
+
+        <a href="https://medium.com" target="_blank" class="news-item reveal">
+          <div class="news-item__meta">
+            <span class="news-tag">ARTICLE</span>
+            <span class="news-date">15.01.2025</span>
+          </div>
+          <h3 class="news-item__title">CSS Grid vs Flexbox: When to Use What</h3>
+          <p class="news-item__desc">A practical field guide. No filler. Just layout recipes.</p>
+          <span class="news-item__cta">Read ↗</span>
+        </a>
+
+        <a href="https://github.com" target="_blank" class="news-item reveal">
+          <div class="news-item__meta">
+            <span class="news-tag news-tag--project">PROJECT</span>
+            <span class="news-date">30.12.2024</span>
+          </div>
+          <h3 class="news-item__title">CLI Task Manager — Python</h3>
+          <p class="news-item__desc">Lightweight terminal task manager. Runs anywhere with a shell.</p>
+          <span class="news-item__cta">View ↗</span>
+        </a>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-name">YOUR NAME</div>
+    <div class="footer-copy">© 2025 — ALL WRONGS RESERVED</div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 
 </html>
