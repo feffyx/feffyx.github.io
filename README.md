@@ -8,7 +8,7 @@ Live at **[feffyx.github.io](https://feffyx.github.io)**
 ## 📸 Preview
 
 <!-- Drop a screenshot here! e.g. assets/preview.png -->
-![Portfolio Preview](preview/previewfile)
+![Portfolio Preview](preview/previewfile.png)
 
 ---
 
