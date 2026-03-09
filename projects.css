@@ -376,31 +376,35 @@
 /* ---- MEDIA PANEL ---- */
 .modal-media {
   background: #1a1a1a;
-  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 0;
-  overflow: hidden;
+  min-height: 480px;
 }
 
-/* Main media item (video or image) */
+/* Main media item */
 .modal-media__main {
-  position: relative;
-  aspect-ratio: 16/9;
-  width: 100%;
+  flex: 1 1 0;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
-  flex-shrink: 0;
+  padding: 12px;
 }
 
 .modal-media__main img,
 .modal-media__main video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
   display: block;
 }
 
 .modal-media__main video {
+  width: 100%;
+  height: 100%;
   cursor: pointer;
 }
 
@@ -594,6 +598,29 @@
   border-color: var(--black);
 }
 
+/* ---- DOWNLOAD / LINK BUTTON ---- */
+.modal-link-btn {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 12px 24px;
+  background: var(--black);
+  color: var(--white);
+  border: 1.5px solid var(--black);
+  align-self: flex-start;
+  transition: background 0.15s, color 0.15s;
+  margin-top: 4px;
+}
+
+.modal-link-btn:hover {
+  background: transparent;
+  color: var(--black);
+}
+
 /* =====================
    RESPONSIVE
    ===================== */
@@ -610,6 +637,10 @@
   .projects-header {
     padding: 36px 0 28px;
   }
+
+  .modal-media {
+    min-height: 300px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -624,6 +655,7 @@
   .modal-media {
     border-right: none;
     border-bottom: 1px solid rgba(15, 15, 15, 0.1);
+    min-height: 220px;
   }
 
   .modal-info {

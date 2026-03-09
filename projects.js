@@ -9,20 +9,21 @@ const PROJECTS = {
     eyebrow:  'App Design · 2024',
     role:     'UX / UI Designer',
     desc:     'EcoNap is the winning idea of Napoli\'s Hackathon, designed to encourage sustainable lifestyle choices through playful interactions. The challenge was to turn dry eco-data into something people actually want to engage with daily.',
-    design:   'The core design challenge was making sustainability feel rewarding rather than guilt-inducing. I leaned into soft, nature-inspired tones and a gamified loop — short daily actions, instant visual feedback, and a gentle creature that grows alongside your habits. Every micro-interaction was designed to feel like a small celebration.',
+    design:   'The core design challenge was making sustainability feel rewarding rather than guilt-inducing. I leaned into soft, nature-inspired tones and a gamified loop, short daily actions, instant visual feedback, and a gentle creature that grows alongside your habits. Every micro-interaction was designed to feel like a small celebration.',
     media: [
       { type: 'img', src: 'img/Schermata 1.jpg' },
       { type: 'img', src: 'img/Schermata 2.jpg' },
-      { type: 'video', src: 'img/demo.mp4' },
+      { type: 'img', src: 'img/Schermata 3.jpg'},
+      { type: 'img', src: 'img/Schermata 4.jpg'}
     ],
     meta: [
       { label: 'Timeline',  value: '2 months · 2024' },
       { label: 'Team',      value: '4 people' },
       { label: 'Platform',  value: 'iOS, Android' },
-      { label: 'Status',    value: 'Hackathon Winner 🏆' },
+      { label: 'Status',    value: '3rd Place Hackathon Winner 🏆' },
     ],
-    tech:    ['HTML', 'CSS', 'JavaScript'],
-    tools:   ['Figma', 'Procreate'],
+    tech:    ['none'],
+    tools:   ['Figma'],
   },
 
   sortify: {
@@ -64,10 +65,11 @@ const PROJECTS = {
       { label: 'Timeline',  value: '1 month · 2025' },
       { label: 'Team',      value: '10 people' },
       { label: 'Platform',  value: 'Apple Vision Pro (visionOS)' },
-      { label: 'Status',    value: 'Completed' },
+      { label: 'Status',    value: 'Published' },
     ],
     tech:    ['Swift', 'Xcode'],
     tools:   ['Sketch', 'Blender', 'Reality Composer Pro'],
+    link:    { label: 'DOWNLOAD ON APP STORE ↗', href: 'https://lnkd.in/dk4Fh6hi' },
   },
 
   voxtura: {
@@ -129,6 +131,49 @@ const PROJECTS = {
     tech:    ['Unreal Engine'],
     tools:   ['Figma', 'Procreate', 'GarageBand'],
   },
+
+  maskshop: {
+    title:    'Maskshop',
+    eyebrow:  'Solo Game · 2026',
+    role:     '3D Assets Creator & Sound Artist',
+    desc:     'You are a Graphic Designer for a fantasy video game trapped in your own files by the teams Coder, who complains about how messy they are. Your goal is to get out of the file by organizing it, using masking tools to move object layers or hide them.',
+    design:   'During this project I was in charge of making the music, making the 3D assets, and drawing the texture that we used. Although the game is released in a beta version, it is totally playable, though we are looking forward to proceed with its development!',
+    media: [
+      { type: 'video', src: 'video/Maskshop - The Ed Ucati.mp4' },
+    ],
+    meta: [
+      { label: 'Timeline',  value: 'January 2026' },
+      { label: 'Team',      value: '5 people' },
+      { label: 'Platform',  value: 'Windows' },
+      { label: 'Status',    value: 'Playable Beta' },
+    ],
+    tech:    ['Unity'],
+    tools:   ['Figma', 'Procreate', 'Unreal Engine', 'Fab Libraries'],
+    link:    { label: 'DOWNLOAD BETA ↓', href: 'https://lucapucchione.itch.io/maskshop' },
+  },
+
+  napolitarots: {
+    title:    'Napoli Tarots',
+    eyebrow:  'Tourism App · 2026',
+    role:     'UX / UI Designer & Assets Artist',
+    desc:     'A guide to unpopular places in the city of Napoli, Italy. Each unpopular place you go to, you collect a tarot card with its own traditional tale and reference to neapolitan culture.',
+    design:   'This app was built to try and solve a big problem in our city, which is overtourism and mediatic tourism. Napoli is full of legends, traditions, and it has such a rich culture, that not many people know of. We believe that this app will help people appreciate that more, like it helped us! My role for this app was drawing the tarot cards and come up with creative designs, and assist my colleague in the development of an intuitive User Interface.',
+    media: [
+      { type: 'img', src: 'img/Np1.png' },
+      { type: 'img', src: 'img/Np2.png' },
+      { type: 'img', src: 'img/Sangue_Di_San_Gennaro.png' },
+      { type: 'img', src: 'img/Parthenope_.png' },
+      { type: 'img', src: 'img/Munaciello.png' },
+    ],
+    meta: [
+      { label: 'Timeline',  value: 'Out in 2026' },
+      { label: 'Team',      value: '3 people' },
+      { label: 'Platform',  value: 'iOS' },
+      { label: 'Status',    value: 'Coming 2026' },
+    ],
+    tech:    ['Swift'],
+    tools:   ['Figma', 'Procreate'],
+  },
 };
 
 
@@ -180,6 +225,24 @@ function openModal(id) {
   const tags = document.getElementById('modalTags');
   const allTags = [...(p.tech || []), ...(p.tools || [])];
   tags.innerHTML = allTags.map(t => `<span class="modal-tag">${t}</span>`).join('');
+
+  // link button (optional)
+  let linkBtn = document.getElementById('modalLinkBtn');
+  if (p.link) {
+    if (!linkBtn) {
+      linkBtn = document.createElement('a');
+      linkBtn.id = 'modalLinkBtn';
+      linkBtn.className = 'modal-link-btn';
+      linkBtn.target = '_blank';
+      linkBtn.rel = 'noopener noreferrer';
+      document.querySelector('.modal-info').appendChild(linkBtn);
+    }
+    linkBtn.textContent = p.link.label;
+    linkBtn.href = p.link.href;
+    linkBtn.style.display = 'inline-block';
+  } else {
+    if (linkBtn) linkBtn.style.display = 'none';
+  }
 
   // media
   currentMedia = p.media || [];

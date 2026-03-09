@@ -289,7 +289,7 @@
 .skills-grid {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 36px;
 }
 
 .skill-group__title {
@@ -299,44 +299,88 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(15, 15, 15, 0.4);
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
-.skill-tags {
+/* ---- Icon card grid (auto-fill, responsive) ---- */
+.skill-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(76px, 1fr));
+  gap: 10px;
+}
+
+.skill-card {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.skill-tag {
-  font-family: var(--mono);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  padding: 6px 14px;
-  border: 1.5px solid var(--black);
-  background: transparent;
-  color: var(--black);
-  text-transform: uppercase;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  aspect-ratio: 1;
+  /* always square */
+  border: 1.5px solid rgba(15, 15, 15, 0.12);
+  background: rgba(15, 15, 15, 0.02);
   cursor: default;
-  transition: background 0.15s, color 0.15s, transform 0.15s;
+  transition: border-color 0.18s, box-shadow 0.18s, transform 0.2s, background 0.18s;
+  padding: 10px 6px;
+  text-align: center;
+  min-width: 0;
+  /* prevent grid blowout */
 }
 
-.skill-tag:hover {
-  background: var(--black);
-  color: var(--white);
-  transform: translateY(-2px);
+/* ---- Unified icon style: both Devicons and Font Awesome ---- */
+.skill-card i {
+  font-size: 26px;
+  line-height: 1;
+  color: rgba(15, 15, 15, 0.78);
+  /* override devicon brand colors */
+  transition: transform 0.2s cubic-bezier(.34, 1.56, .64, 1), color 0.18s;
 }
 
-.skill-tag--soft {
-  border-color: rgba(15, 15, 15, 0.3);
+.skill-card span {
+  font-family: var(--mono);
+  font-size: 7.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(15, 15, 15, 0.45);
+  line-height: 1.25;
+  word-break: break-word;
+  hyphens: auto;
+  max-width: 100%;
+}
+
+.skill-card:hover {
+  border-color: var(--black);
+  box-shadow: 4px 4px 0 var(--black);
+  transform: translate(-2px, -2px);
+  background: rgba(15, 15, 15, 0.04);
+}
+
+.skill-card:hover i {
+  transform: scale(1.18);
+  color: var(--black);
+}
+
+/* Soft skills — slightly muted */
+.skill-card--soft {
+  border-color: rgba(15, 15, 15, 0.08);
+}
+
+.skill-card--soft i {
   color: rgba(15, 15, 15, 0.5);
 }
 
-.skill-tag--soft:hover {
-  background: rgba(15, 15, 15, 0.08);
-  color: var(--black);
-  border-color: var(--black);
+.skill-card--soft span {
+  color: rgba(15, 15, 15, 0.38);
+}
+
+.skill-card--soft:hover {
+  border-color: rgba(15, 15, 15, 0.45);
+  box-shadow: 4px 4px 0 rgba(15, 15, 15, 0.2);
+}
+
+.skill-card--soft:hover i {
+  color: rgba(15, 15, 15, 0.8);
 }
 
 /* =====================
