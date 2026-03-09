@@ -330,7 +330,7 @@ a {
 /* ---- SCROLL HINT ---- */
 .scroll-hint {
   position: absolute;
-  bottom: 52px;
+  bottom: 100px;
   right: 36px;
   z-index: 10;
   display: flex;
@@ -338,7 +338,7 @@ a {
   align-items: center;
   gap: 10px;
   font-family: var(--mono);
-  font-size: 15px;
+  font-size: 25px;
   font-weight: 700;
   letter-spacing: 0.25em;
   color: rgba(255, 255, 255, 0.9);

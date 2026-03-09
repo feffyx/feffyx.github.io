@@ -142,7 +142,7 @@ const PROJECTS = {
       { type: 'video', src: 'video/Maskshop - The Ed Ucati.mp4' },
     ],
     meta: [
-      { label: 'Timeline',  value: 'January 2026' },
+      { label: 'Timeline',  value: '5 days · 2026' },
       { label: 'Team',      value: '5 people' },
       { label: 'Platform',  value: 'Windows' },
       { label: 'Status',    value: 'Playable Beta' },
