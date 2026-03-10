@@ -257,6 +257,50 @@ a {
     border-color 0.18s ease;
 }
 
+/* =====================
+   NAV
+   ===================== */
+.about-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 40px;
+  border-bottom: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  z-index: 100;
+}
+
+.about-nav__back,
+.about-nav__fwd {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  transition: color 0.15s;
+  padding: 6px 0;
+}
+
+.about-nav__back:hover,
+.about-nav__fwd:hover {
+  color: var(--white);
+}
+
+.about-nav__name {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+
+
 /* ABOUT — top left, tilted left */
 .sticker-btn--about {
   top: 28vh;
@@ -581,6 +625,10 @@ a {
 }
 
 @media (max-width: 600px) {
+  /* FIX 1: Reduce min-height so landscape phones don't force scroll */
+  .hero {
+    min-height: 480px;
+  }
 
   /* Stack the name vertically and make it a bit smaller so it fits nicely on a phone screen */
   .hero-name {
@@ -617,9 +665,11 @@ a {
     gap: 16px;
   }
 
-  /* Make buttons text-only or simpler if needed, but keeping them sticker-like is fine */
-  .sticker-btn--about,
-  .sticker-btn--projects {
+  /* FIX 2: Scope sticker static positioning to inside .hero-mobile-nav
+     so buttons only go static when they're correctly wrapped in the mobile nav container.
+     Direct .hero children retain their absolute positioning handled by the 860px breakpoint. */
+  .hero-mobile-nav .sticker-btn--about,
+  .hero-mobile-nav .sticker-btn--projects {
     position: static !important;
     transform: none !important;
     box-shadow: 2px 2px 0 var(--black) !important;
@@ -628,15 +678,15 @@ a {
     margin-bottom: 0 !important;
   }
 
-  .sticker-btn--about:hover,
-  .sticker-btn--projects:hover {
+  .hero-mobile-nav .sticker-btn--about:hover,
+  .hero-mobile-nav .sticker-btn--projects:hover {
     transform: translate(-2px, -2px) !important;
     box-shadow: 4px 4px 0 var(--black) !important;
   }
 
-  /* Keep the center metadata at the bottom right above the ticker */
+  /* FIX 3: Explicit ticker clearance — ticker is 36px tall, add 16px breathing room */
   .hero-center {
-    bottom: 60px;
+    bottom: calc(36px + 16px);
     padding: 0 16px;
     width: 100%;
   }
