@@ -374,14 +374,14 @@
   color: rgba(15, 15, 15, 0.38);
 }
 
-.skill-card--soft:hover {
+/* .skill-card--soft:hover {
   border-color: rgba(15, 15, 15, 0.45);
   box-shadow: 4px 4px 0 rgba(15, 15, 15, 0.2);
 }
 
 .skill-card--soft:hover i {
   color: rgba(15, 15, 15, 0.8);
-}
+} */
 
 /* =====================
    CONTACT

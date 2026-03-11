@@ -625,6 +625,7 @@ a {
 }
 
 @media (max-width: 600px) {
+
   /* FIX 1: Reduce min-height so landscape phones don't force scroll */
   .hero {
     min-height: 480px;
