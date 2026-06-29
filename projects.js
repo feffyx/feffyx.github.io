@@ -149,17 +149,16 @@ const PROJECTS = {
     ],
     tech:    ['Unity'],
     tools:   ['Figma', 'Procreate', 'Unreal Engine', 'Fab Libraries'],
-    link:    { label: 'DOWNLOAD BETA ↓', href: 'https://lucapucchione.itch.io/maskshop' },
+    link:    { label: 'DOWNLOAD BETA ↓', href: 'https://studio26.itch.io/maskshop' },
   },
 
   foxr: {
     title:    'Foxr',
-    eyebrow:  'Spatial Design · 2026',
-    role:     'UX / UI Designer & 3D Artist',
-    desc:     'Foxr is a futuristic spatial design application designed for AR/VR visors. It explores new boundings of human-computer interaction by utilizing hand gestures, depth, and three-dimensional interfaces that blend seamlessly into the user\'s physical environment.',
-    design:   'The core design concept is centered around holographic widgets and translucent panels. Using Blender, I modeled volumetric orange holographic fox iconography that responds to light sources. The UI simplifies spatial navigation, allowing users to interact with files and settings through natural physical gestures rather than flat screens.',
+    eyebrow:  'VisionOS Research Project · 2026',
+     role:     'UX / UI Designer & 3D Artist',
+    desc:     'FOXR is the product of a collaboration between me and my team from Apple Developer Academy and Robotics researchers of PRISMA LAB. The app allows you to control a robot\'s locomotion remotely.',
+    design:   'Currently researchers are using a physical joystick in order to move a robot, and because there is no solution that allows an operator to control a robot\'s legs, we made this open source project to compare our methods against the traditional one. Me and the team developed two interacrtion protocols to move the robot. The one I focused on is a 3D joystick: with a custom gesture and your left hand yu mvoe the robot and with your right hand you change the direction the robot faces. Since visionOS is a new technology still I also built a Design System in order to create a coherent and flawless User Interface. ',
     media: [
-      { type: 'video-placeholder', label: 'VIDEO COMING SOON' },
       { type: 'img', src: 'img/foxrmain.png' },
     ],
     meta: [
@@ -170,10 +169,6 @@ const PROJECTS = {
     ],
     tech:    ['Unity', 'visionOS SDK'],
     tools:   ['Figma', 'Blender', 'Reality Composer Pro'],
-    links: [
-      { label: 'GITHUB REPO ↗',         href: 'https://github.com/feffyx', style: 'secondary' },
-      { label: 'DOWNLOAD ON APP STORE ↗', href: 'https://apps.apple.com',    style: 'primary'   },
-    ],
   },
 
   napolitarots: {
@@ -269,20 +264,23 @@ function openModal(id) {
   const allTags = [...(p.tech || []), ...(p.tools || [])];
   tags.innerHTML = allTags.map(t => `<span class="modal-tag">${t}</span>`).join('');
 
-  // link buttons (optional — supports both single `link` and `links[]`)
-  // Remove any previously injected link buttons
-  document.querySelectorAll('.modal-link-btn').forEach(el => el.remove());
-  const modalInfo = document.querySelector('.modal-info');
-  const allLinks = p.links || (p.link ? [p.link] : []);
-  allLinks.forEach(l => {
-    const a = document.createElement('a');
-    a.className = 'modal-link-btn' + (l.style === 'secondary' ? ' modal-link-btn--secondary' : '');
-    a.target  = '_blank';
-    a.rel     = 'noopener noreferrer';
-    a.textContent = l.label;
-    a.href    = l.href;
-    modalInfo.appendChild(a);
-  });
+  // link button (optional)
+  let linkBtn = document.getElementById('modalLinkBtn');
+  if (p.link) {
+    if (!linkBtn) {
+      linkBtn = document.createElement('a');
+      linkBtn.id = 'modalLinkBtn';
+      linkBtn.className = 'modal-link-btn';
+      linkBtn.target = '_blank';
+      linkBtn.rel = 'noopener noreferrer';
+      document.querySelector('.modal-info').appendChild(linkBtn);
+    }
+    linkBtn.textContent = p.link.label;
+    linkBtn.href = p.link.href;
+    linkBtn.style.display = 'inline-block';
+  } else {
+    if (linkBtn) linkBtn.style.display = 'none';
+  }
 
   // media
   currentMedia = p.media || [];
@@ -316,7 +314,7 @@ function buildMedia() {
 
     currentMedia.forEach((item, i) => {
       let thumb;
-      if (item.type === 'video' || item.type === 'video-placeholder') {
+      if (item.type === 'video') {
         thumb = document.createElement('div');
         thumb.className = 'modal-thumb-video' + (i === 0 ? ' active' : '');
       } else {
@@ -347,12 +345,6 @@ function setMedia(index) {
         <source src="${item.src}" type="video/mp4"/>
         Your browser does not support video.
       </video>`;
-  } else if (item.type === 'video-placeholder') {
-    mainDiv.innerHTML = `
-      <div class="modal-video-placeholder">
-        <span class="modal-video-placeholder__icon">▶</span>
-        <span class="modal-video-placeholder__label">${item.label || 'VIDEO COMING SOON'}</span>
-      </div>`;
   } else {
     mainDiv.innerHTML = `<img src="${item.src}" alt="" loading="lazy"/>`;
   }
