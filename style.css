@@ -277,18 +277,33 @@ a {
 .about-nav__back,
 .about-nav__fwd {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.45);
-  transition: color 0.15s;
+  color: rgba(255, 255, 255, 0.8);
+  transition: color 0.2s ease, transform 0.2s ease;
   padding: 6px 0;
+  display: inline-flex;
+  align-items: center;
 }
 
-.about-nav__back:hover,
+.about-nav__back {
+  transform-origin: left center;
+}
+
+.about-nav__fwd {
+  transform-origin: right center;
+}
+
+.about-nav__back:hover {
+  color: var(--white);
+  transform: translateX(-4px);
+}
+
 .about-nav__fwd:hover {
   color: var(--white);
+  transform: translateX(4px);
 }
 
 .about-nav__name {
@@ -296,7 +311,12 @@ a {
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.2em;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.15s ease;
+}
+
+.about-nav__name:hover {
+  color: var(--white);
 }
 
 

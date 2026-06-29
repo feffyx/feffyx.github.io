@@ -152,6 +152,25 @@ const PROJECTS = {
     link:    { label: 'DOWNLOAD BETA ↓', href: 'https://lucapucchione.itch.io/maskshop' },
   },
 
+  foxr: {
+    title:    'Foxr',
+    eyebrow:  'Spatial Design · 2026',
+    role:     'UX / UI Designer & 3D Artist',
+    desc:     'Foxr is a futuristic spatial design application designed for AR/VR visors. It explores new boundings of human-computer interaction by utilizing hand gestures, depth, and three-dimensional interfaces that blend seamlessly into the user\'s physical environment.',
+    design:   'The core design concept is centered around holographic widgets and translucent panels. Using Blender, I modeled volumetric orange holographic fox iconography that responds to light sources. The UI simplifies spatial navigation, allowing users to interact with files and settings through natural physical gestures rather than flat screens.',
+    media: [
+      { type: 'img', src: 'img/foxrmain.png' },
+    ],
+    meta: [
+      { label: 'Timeline',  value: '2 months · 2026' },
+      { label: 'Team',      value: '3 people' },
+      { label: 'Platform',  value: 'visionOS, Quest 3' },
+      { label: 'Status',    value: 'Design Concept' },
+    ],
+    tech:    ['Unity', 'visionOS SDK'],
+    tools:   ['Figma', 'Blender', 'Reality Composer Pro'],
+  },
+
   napolitarots: {
     title:    'Napoli Tarots',
     eyebrow:  'Tourism App · 2026',
@@ -177,20 +196,39 @@ const PROJECTS = {
 };
 
 
-// ── YEAR FILTER ───────────────────────────────
+// ── FILTERS ───────────────────────────────────
+let activeYear     = 'all';
+let activeCategory = 'all';
+
+function applyFilters() {
+  document.querySelectorAll('.project-card').forEach(card => {
+    const matchYear = activeYear === 'all' || card.dataset.year === activeYear;
+    const matchCat  = activeCategory === 'all' || card.dataset.category === activeCategory;
+    if (matchYear && matchCat) {
+      card.classList.remove('hidden');
+    } else {
+      card.classList.add('hidden');
+    }
+  });
+}
+
+// Year buttons
 document.querySelectorAll('.year-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.year-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
+    activeYear = btn.dataset.year;
+    applyFilters();
+  });
+});
 
-    const year = btn.dataset.year;
-    document.querySelectorAll('.project-card').forEach(card => {
-      if (year === 'all' || card.dataset.year === year) {
-        card.classList.remove('hidden');
-      } else {
-        card.classList.add('hidden');
-      }
-    });
+// Category buttons
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeCategory = btn.dataset.category;
+    applyFilters();
   });
 });
 

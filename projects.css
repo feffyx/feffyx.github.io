@@ -24,18 +24,33 @@
 .about-nav__back,
 .about-nav__fwd {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(15, 15, 15, 0.4);
-  transition: color 0.15s;
+  color: rgba(15, 15, 15, 0.8);
+  transition: color 0.2s ease, transform 0.2s ease;
   padding: 6px 0;
+  display: inline-flex;
+  align-items: center;
 }
 
-.about-nav__back:hover,
+.about-nav__back {
+  transform-origin: left center;
+}
+
+.about-nav__fwd {
+  transform-origin: right center;
+}
+
+.about-nav__back:hover {
+  color: var(--black);
+  transform: translateX(-4px);
+}
+
 .about-nav__fwd:hover {
   color: var(--black);
+  transform: translateX(4px);
 }
 
 .about-nav__name {
@@ -43,7 +58,12 @@
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.2em;
-  color: rgba(15, 15, 15, 0.3);
+  color: rgba(15, 15, 15, 0.6);
+  transition: color 0.15s ease;
+}
+
+.about-nav__name:hover {
+  color: var(--black);
 }
 
 /* =====================
@@ -97,7 +117,57 @@
   text-transform: uppercase;
 }
 
-/* ---- YEAR FILTER ---- */
+/* ---- FILTERS ---- */
+.projects-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+  padding-bottom: 6px;
+}
+
+.filter-group {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.filter-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(15, 15, 15, 0.3);
+  margin-right: 2px;
+}
+
+.filter-btn {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border: 1.5px solid rgba(15, 15, 15, 0.2);
+  background: transparent;
+  color: rgba(15, 15, 15, 0.4);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.filter-btn:hover {
+  border-color: var(--black);
+  color: var(--black);
+}
+
+.filter-btn.active {
+  background: var(--black);
+  color: var(--white);
+  border-color: var(--black);
+}
+
 .year-filter {
   display: flex;
   gap: 6px;
@@ -636,6 +706,14 @@
 
   .projects-header {
     padding: 36px 0 28px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .projects-filters {
+    align-items: flex-start;
+    width: 100%;
   }
 
   .modal-media {

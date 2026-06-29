@@ -32,12 +32,22 @@
         </h1>
       </div>
 
-      <!-- YEAR FILTER -->
-      <div class="year-filter">
-        <button class="year-btn active" data-year="all">ALL</button>
-        <button class="year-btn" data-year="2026">2026</button>
-        <button class="year-btn" data-year="2025">2025</button>
-        <button class="year-btn" data-year="2024">2024</button>
+      <!-- FILTERS -->
+      <div class="projects-filters">
+        <div class="filter-group">
+          <span class="filter-label">TYPE:</span>
+          <button class="filter-btn active" data-category="all">ALL</button>
+          <button class="filter-btn" data-category="game">GAME DESIGN</button>
+          <button class="filter-btn" data-category="uxui">UX/UI & SPATIAL</button>
+        </div>
+
+        <div class="filter-group">
+          <span class="filter-label">YEAR:</span>
+          <button class="year-btn active" data-year="all">ALL</button>
+          <button class="year-btn" data-year="2026">2026</button>
+          <button class="year-btn" data-year="2025">2025</button>
+          <button class="year-btn" data-year="2024">2024</button>
+        </div>
       </div>
     </div>
 
@@ -47,7 +57,7 @@
     <div class="projects-grid" id="projectsGrid">
 
       <!-- MASKSHOP -->
-      <article class="project-card reveal" data-year="2026" data-id="maskshop">
+      <article class="project-card reveal" data-year="2026" data-category="game" data-id="maskshop">
         <div class="project-card__thumb">
           <img src="img/maskshopmain.png" alt="Maskshop" onerror="this.closest('.project-card__thumb').classList.add('no-img')"/>
           <div class="project-card__overlay">
@@ -64,8 +74,26 @@
         </div>
       </article>
 
+      <!-- FOXR -->
+      <article class="project-card reveal" data-year="2026" data-category="uxui" data-id="foxr">
+        <div class="project-card__thumb">
+          <img src="img/foxrmain.png" alt="Foxr" onerror="this.closest('.project-card__thumb').classList.add('no-img')"/>
+          <div class="project-card__overlay">
+            <span class="project-card__open">VIEW ↗</span>
+          </div>
+        </div>
+        <div class="project-card__info">
+          <div class="project-card__meta">
+            <span class="project-tag tag--spatial">SPATIAL</span>
+            <span class="project-year">2026</span>
+          </div>
+          <h2 class="project-card__title">Foxr</h2>
+          <p class="project-card__sub">Spatial Design & Interaction</p>
+        </div>
+      </article>
+
       <!-- NAPOLI TAROTS -->
-      <article class="project-card reveal" data-year="2026" data-id="napolitarots">
+      <article class="project-card reveal" data-year="2026" data-category="uxui" data-id="napolitarots">
         <div class="project-card__thumb">
           <img src="img/Napolimain.jpeg" alt="NapoliTarots" onerror="this.closest('.project-card__thumb').classList.add('no-img')"/>
           <div class="project-card__overlay">
@@ -84,7 +112,7 @@
 
 
       <!-- TRUSTFALL -->
-      <article class="project-card reveal" data-year="2026" data-id="trustfall">
+      <article class="project-card reveal" data-year="2026" data-category="game" data-id="trustfall">
         <div class="project-card__thumb">
           <img src="img/Trustfall 1.jpeg" alt="Trustfall" onerror="this.closest('.project-card__thumb').classList.add('no-img')"/>
           <div class="project-card__overlay">
@@ -103,7 +131,7 @@
 
 
             <!-- VOXTURA -->
-      <article class="project-card reveal" data-year="2025" data-id="voxtura">
+      <article class="project-card reveal" data-year="2025" data-category="uxui" data-id="voxtura">
         <div class="project-card__thumb">
           <img src="img/Voxturamain.jpeg" alt="Voxtura" onerror="this.closest('.project-card__thumb').classList.add('no-img')"/>
           <div class="project-card__overlay">
@@ -121,7 +149,7 @@
       </article>
 
       <!-- AIRCHESTRA -->
-      <article class="project-card reveal" data-year="2025" data-id="airchestra">
+      <article class="project-card reveal" data-year="2025" data-category="uxui" data-id="airchestra">
         <div class="project-card__thumb">
           <img src="img/Airchestramain.jpeg" alt="Airchestra" onerror="this.closest('.project-card__thumb').classList.add('no-img')"/>
           <div class="project-card__overlay">
@@ -140,7 +168,7 @@
 
 
             <!-- MOLLY'S CANVAS -->
-      <article class="project-card reveal" data-year="2026" data-id="mollys">
+      <article class="project-card reveal" data-year="2026" data-category="game" data-id="mollys">
         <div class="project-card__thumb">
           <img src="img/Molly's Canvas Icon.jpeg" alt="Molly's Canvas" onerror="this.closest('.project-card__thumb').classList.add('no-img')"/>
           <div class="project-card__overlay">
@@ -158,7 +186,7 @@
       </article>
 
       <!-- SORTIFY -->
-      <article class="project-card reveal" data-year="2025" data-id="sortify">
+      <article class="project-card reveal" data-year="2025" data-category="game" data-id="sortify">
         <div class="project-card__thumb">
           <img src="img/Sortifymain.jpeg" alt="Sortify" onerror="this.closest('.project-card__thumb').classList.add('no-img')"/>
           <div class="project-card__overlay">
@@ -178,7 +206,7 @@
 
 
       <!-- ECONAP -->
-      <article class="project-card reveal" data-year="2024" data-id="econap">
+      <article class="project-card reveal" data-year="2024" data-category="uxui" data-id="econap">
         <div class="project-card__thumb">
           <img src="img/Econapmain.jpeg" alt="EcoNap" onerror="this.closest('.project-card__thumb').classList.add('no-img')"/>
           <div class="project-card__overlay">
@@ -195,7 +223,6 @@
         </div>
       </article>
 
-      
     </div>
   </main>
 
